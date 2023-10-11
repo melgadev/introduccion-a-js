@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tarea 3 Clase 5</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Calculadora de tiempo de videos</h1>
+    <form>
+        <h3>Video 1</h3>
+        <label for="horas-video-01">Horas:</label>
+        <input class="horas" type="number" name="horas-video-01" id="horas-video-01" min="0" max="999" size="3">
+        <label for="minutos-video-01">Minutos:</label>
+        <input class="minutos" type="number" name="minutos-video-01" id="minutos-video-01" min="0" max="59" size="2">
+        <label for="segundos-video-01">Segundos:</label>
+        <input class="segundos" type="number" name="segundos-video-01" id="segundos-video-01" min="0" max="59" size="2">
+        <hr>
+        <h3>Video 2</h3>
+        <label for="horas-video-02">Horas:</label>
+        <input class="horas" type="number" name="horas-video-02" id="horas-video-02" min="0" max="999" size="3">
+        <label for="minutos-video-02">Minutos:</label>
+        <input class="minutos" type="number" name="minutos-video-02" id="minutos-video-02" min="0" max="59" size="2">
+        <label for="segundos-video-02">Segundos:</label>
+        <input class="segundos" type="number" name="segundos-video-02" id="segundos-video-02" min="0" max="59" size="2">
+        <hr>
+        <h3>Video 3</h3>
+        <label for="horas-video-03">Horas:</label>
+        <input class="horas" type="number" name="horas-video-03" id="horas-video-03" min="0" max="999" size="3">
+        <label for="minutos-video-03">Minutos:</label>
+        <input class="minutos" type="number" name="minutos-video-03" id="minutos-video-03" min="0" max="59" size="2">
+        <label for="segundos-video-03">Segundos:</label>
+        <input class="segundos" type="number" name="segundos-video-03" id="segundos-video-03" min="0" max="59" size="2">
+        <hr>
+        <input type="button" id="calcular-tiempo" value="Calcular">
+        <input type="reset" id="limpiar" value="Limpiar">
+    </form>
+    <hr>
+    <strong id="mostrar-total"></strong>
+
+    <script src='clase5-tarea3.js'></script>
+</body>
+</html>
