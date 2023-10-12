@@ -15,9 +15,9 @@ let $masGrande =  document.querySelector("#mas-grande");
 let $masFrecuente = document.querySelector("#mas-frecuente");
 
 $promedio.innerText += ` ${calcularPromedio(numeros).toFixed(2)}.`;
-$masChico.innerText += ` ${calcularMenor(numeros)}.`;
-$masGrande.innerText += ` ${calcularMayor(numeros)}.`;
-$masFrecuente.innerText += ` ${calcularMasFrecuente(numeros)}.`;
+$masChico.innerText += ` ${devolverNumeroMenor(numeros)}.`;
+$masGrande.innerText += ` ${devolverNumeroMayor(numeros)}.`;
+$masFrecuente.innerText += ` ${devolverNumeroMasFrecuente(numeros)}.`;
 
 function convertirANumeros(lista) {
     const numeros = [];
@@ -35,7 +35,7 @@ function calcularPromedio(numeros) {
     return suma / numeros.length;
 }
 
-function calcularMenor(numeros) {
+function devolverNumeroMenor(numeros) {
     let menor = numeros[0];
     for (let i = 0; i < numeros.length; i++) {
         if (numeros[i] < menor) {
@@ -45,7 +45,7 @@ function calcularMenor(numeros) {
     return menor;
 }
 
-function calcularMayor(numeros) {
+function devolverNumeroMayor(numeros) {
     let mayor = numeros[0];
     for (let i = 0; i < numeros.length; i++) {
         if (numeros[i] > mayor) {
@@ -55,7 +55,7 @@ function calcularMayor(numeros) {
     return mayor;
 }
 
-function calcularMasFrecuente(numeros) {
+function devolverNumeroMasFrecuente(numeros) {
     let masFrecuente = numeros[0];
     let cantidadMasFrecuente = 0;
     for (let i = 0; i < numeros.length; i++) {

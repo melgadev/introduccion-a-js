@@ -7,13 +7,13 @@
 // al apretar el botón "Calcular tiempo total", debe mostrar en un
 // <strong> pre-creado el tiempo total de los videos.
 const $mostrarResultado = document.querySelector("#mostrar-total");
-const $limpiar = document.querySelector("#limpiar");
-const $calcularTiempo = document.querySelector("#calcular-tiempo");
-$calcularTiempo.onclick = function(e) {
+const $botonLimpiar = document.querySelector("#boton-limpiar");
+const $botonCalcularTiempo = document.querySelector("#boton-calcular-tiempo");
+$botonCalcularTiempo.onclick = function(e) {
    
-    let totalHoras = sumarTotales(document.querySelectorAll(".horas"));
-    let totalMinutos = sumarTotales(document.querySelectorAll(".minutos"));
-    let totalSegundos = sumarTotales(document.querySelectorAll(".segundos"));
+    let totalHoras = sumarListaDeNumeros(document.querySelectorAll(".horas"));
+    let totalMinutos = sumarListaDeNumeros(document.querySelectorAll(".minutos"));
+    let totalSegundos = sumarListaDeNumeros(document.querySelectorAll(".segundos"));
 
     if(totalSegundos > 59) {
         totalMinutos += parseInt(pasarSegundosAMinutos(totalSegundos));
@@ -30,18 +30,17 @@ $calcularTiempo.onclick = function(e) {
     e.preventDefault();
 }
 
-function sumarTotales(nodo) {
+function sumarListaDeNumeros(nodoDeListaDeNumeros) {
     let suma = 0;
-    for (let i = 0; i < nodo.length; i++) {
-        suma += Number(nodo[i].value);
+    for (let i = 0; i < nodoDeListaDeNumeros.length; i++) {
+        suma += Number(nodoDeListaDeNumeros[i].value);
     }
     return suma;
 }
 
 function pasarSegundosAMinutos(segundos) {
-    const UN_MINUTO = 60;
-    const minutos = segundos / UN_MINUTO;
-    return minutos;
+    const SEGUNDOS_EN_UN_MINUTO = 60;
+    return segundos / SEGUNDOS_EN_UN_MINUTO;
 }
 
 function cambiarDecimalAHorario(tiempo) {
@@ -52,11 +51,10 @@ function cambiarDecimalAHorario(tiempo) {
 }
 
 function pasarMinutosAHoras(minutos) {
-    const UNA_HORA = 60;
-    const horas = minutos / UNA_HORA;
-    return horas;
+    const MINUTOS_EN_UNA_HORA = 60;
+    return minutos / MINUTOS_EN_UNA_HORA;
 }
 
-$limpiar.onclick = function() {
+$botonLimpiar.onclick = function() {
     $mostrarResultado.innerText = "";
 }
