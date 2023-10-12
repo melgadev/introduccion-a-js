@@ -8,8 +8,8 @@
 // Y va a cambiar el <h1> para decir "Bienvenido, nombreDeUsuario"!
 const $titulo = document.querySelector("h1");
 const $parrafoTexto = document.querySelector("#texto");
-const $mostrarInfo = document.querySelector("#mostrar-info");
-$mostrarInfo.onclick = function(e) {
+const $botonMostrarInformacion = document.querySelector("#boton-mostrar-informacion");
+$botonMostrarInformacion.onclick = function(e) {
     const nombres = document.querySelector("#nombres").value;
     const apellidos = document.querySelector("#apellidos").value;
 
