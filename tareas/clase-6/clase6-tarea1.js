@@ -9,6 +9,7 @@ const $botonCantidadIntegrantes = document.querySelector("#boton-cantidad-integr
 $botonCantidadIntegrantes.onclick = function(e) {
     const $inputCantidadIntegrantes = document.querySelector("#cantidad-integrantes");
     $inputCantidadIntegrantes.disabled = true;
+    $botonCantidadIntegrantes.disabled = true;
     const cantidadIntegrantes = Number($inputCantidadIntegrantes.value);
 
     const $cargarEdadesIntegrantes = document.querySelector('#edades-integrantes');
