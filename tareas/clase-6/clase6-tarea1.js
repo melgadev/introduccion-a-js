@@ -36,6 +36,7 @@ $botonCantidadIntegrantes.onclick = function(e) {
 const $mostrarResultados = document.querySelector("#mostrar-resultados");
 const $botonCalcularEdades = document.querySelector("#boton-calcular-edades");
 $botonCalcularEdades.onclick = function(e) {
+    deshabilitarInputs();
     const $edadPromedio = document.querySelector("#edad-promedio");
     const $edadMenor = document.querySelector("#edad-menor");
     const $edadMayor = document.querySelector("#edad-mayor");
@@ -75,12 +76,17 @@ function ocultarResultados() {
     $mostrarResultados.className = "oculto";
 }
 
+function deshabilitarInputs() {
+    const $inputs = document.querySelectorAll('form input');
+    for (let i = 0; i < $inputs.length; i++) {
+        $inputs[i].disabled = true;
+    }
+}
+
 function convertirANumeros(listaDeNumeros) {
     const numeros = [];
     for (let i = 0; i < listaDeNumeros.length; i++) {
-        if (listaDeNumeros[i].value == "") {
-            listaDeNumeros[i].remove();
-        } else {
+        if (listaDeNumeros[i].valueAsNumber) {
             numeros.push(Number(listaDeNumeros[i].value));
         }
     }
