@@ -43,10 +43,11 @@ $botonCalcularEdades.onclick = function(e) {
     const $edadesIntegrantes = document.querySelectorAll(".integrante");
     const edadesIntegrantes = convertirANumeros($edadesIntegrantes);
    
-        $edadPromedio.innerText += ` ${Number.isInteger(calcularPromedio(edadesIntegrantes)) ? calcularPromedio(edadesIntegrantes) : calcularPromedio(edadesIntegrantes).toFixed(2)} años.`
+        const edadPromedio = calcularPromedio(edadesIntegrantes)
+        $edadPromedio.innerText += ` ${Number.isInteger(edadPromedio) ? edadPromedio : edadPromedio.toFixed(2)} años.`
         $edadMenor.innerText += ` ${devolverMenor(edadesIntegrantes)} años.`
         $edadMayor.innerText += ` ${devolverMayor(edadesIntegrantes)} años.`
-    
+        
     ocultarBotonCalcular();
     mostrarResultados();
     mostrarBotonReiniciar();
